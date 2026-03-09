@@ -15,10 +15,10 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
         className="text-center py-16"
       >
         <div className="max-w-md mx-auto">
-          <div className="w-24 h-24 mx-auto mb-4 bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center">
+          <div className="w-24 h-24 mx-auto mb-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg flex items-center justify-center">
             <div className="text-gray-600 font-mono text-4xl">{'{}'}</div>
           </div>
-          <h3 className="text-xl font-semibold text-gray-300 mb-2 font-mono">
+          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2 font-mono">
             {'//'} No projects found
           </h3>
           <p className="text-gray-500 font-mono text-sm">

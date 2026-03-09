@@ -42,7 +42,7 @@ export default function FilterTags({
       {hasActiveFilters && (
         <button
           onClick={onClearFilters}
-          className="w-full flex items-center justify-center space-x-2 px-4 py-2 mb-6 backdrop-blur-xl bg-gray-800/60 hover:bg-gray-800/80 text-gray-300 hover:text-accent-500 rounded-lg transition-colors text-sm font-mono border border-gray-700/50"
+          className="w-full flex items-center justify-center space-x-2 px-4 py-2 mb-6 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:text-accent-500 rounded-lg transition-colors text-sm font-mono border border-gray-200 dark:border-gray-700/50"
         >
           <X size={16} />
           <span>clear_filters()</span>
@@ -61,8 +61,8 @@ export default function FilterTags({
                 onClick={() => onToggleBatch(batch)}
                 className={`px-3 py-1.5 rounded border text-sm font-mono transition-all backdrop-blur-xl ${
                   selectedBatches.includes(batch)
-                    ? 'bg-gray-800/80 text-accent-500 border-accent-500'
-                    : 'bg-gray-800/40 text-gray-400 border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-800/60'
+                    ? 'bg-gray-100/80 dark:bg-gray-800/80 text-accent-500 border-accent-500'
+                    : 'bg-gray-100/40 dark:bg-gray-800/40 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-100/60 dark:hover:bg-gray-800/60'
                 }`}
               >
                 {batch}
@@ -84,8 +84,8 @@ export default function FilterTags({
                 onClick={() => onToggleTag(tag)}
                 className={`px-3 py-1.5 rounded border text-sm font-mono transition-all backdrop-blur-xl ${
                   selectedTags.includes(tag)
-                    ? 'bg-gray-800/80 text-accent-500 border-accent-500'
-                    : 'bg-gray-800/40 text-gray-400 border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-800/60'
+                    ? 'bg-gray-100/80 dark:bg-gray-800/80 text-accent-500 border-accent-500'
+                    : 'bg-gray-100/40 dark:bg-gray-800/40 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-100/60 dark:hover:bg-gray-800/60'
                 }`}
               >
                 {tag}
@@ -107,8 +107,8 @@ export default function FilterTags({
                 onClick={() => onToggleTechStack(tech)}
                 className={`px-3 py-1.5 rounded border text-sm font-mono transition-all backdrop-blur-xl ${
                   selectedTechStack.includes(tech)
-                    ? 'bg-gray-800/80 text-accent-500 border-accent-500'
-                    : 'bg-gray-800/40 text-gray-400 border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-800/60'
+                    ? 'bg-gray-100/80 dark:bg-gray-800/80 text-accent-500 border-accent-500'
+                    : 'bg-gray-100/40 dark:bg-gray-800/40 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-100/60 dark:hover:bg-gray-800/60'
                 }`}
               >
                 {tech}

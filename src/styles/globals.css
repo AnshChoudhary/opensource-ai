@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-950 text-gray-100 antialiased;
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
   
@@ -16,26 +16,37 @@
 
 @layer components {
   .glass-effect {
-    @apply backdrop-blur-xl bg-gray-900/80 border border-gray-800/50;
+    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 dark:border-gray-800/50;
   }
 
   .frosted-glass {
-    @apply backdrop-blur-xl bg-gray-900/60 border border-gray-800/30 shadow-xl;
+    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-900/60 border border-gray-200/50 dark:border-gray-800/30 shadow-xl;
   }
 
   .frosted-glass-light {
-    @apply backdrop-blur-xl bg-gray-900/40 border border-gray-800/20 shadow-lg;
+    @apply backdrop-blur-xl bg-white/60 dark:bg-gray-900/40 border border-gray-200/30 dark:border-gray-800/20 shadow-lg;
   }
 
   .code-block {
-    @apply bg-gray-900 border border-gray-800 rounded-lg p-4 font-mono text-sm;
+    @apply bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 font-mono text-sm;
   }
 
   .terminal-line {
-    @apply text-green-400;
+    @apply text-green-600 dark:text-green-400;
   }
 
   .terminal-prompt {
-    @apply text-blue-400;
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .bg-grid-white {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.10) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .dark .bg-grid-white {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   }
 }
