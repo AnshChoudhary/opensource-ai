@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "AI GitHub Profiler",
+    "description": "Open-source alternative to Skillsync. Analyze GitHub profiles using AI-powered insights to find developers and their expertise.",
+    "longDescription": "Skillsync charges for analyzing GitHub profiles to find engineers. This open-source tool provides the same functionality—AI-powered GitHub profile analysis using Google's Gemini API. Analyze developer backgrounds, technical skills, domain expertise, activity patterns, and repository statistics. All data stays private, and you bring your own API keys. No monthly subscription fees, no vendor lock-in.",
+    "githubUrl": "https://github.com/AnshChoudhary/ai-github-profiler",
+    "tags": ["Developer Tools", "GitHub", "AI Analysis", "Recruitment"],
+    "techStack": ["TypeScript", "React", "Node.js", "Express", "Gemini API"],
+    "ycBatch": "W24",
+    "startupName": "Skillsync",
+    "proprietaryService": "Skillsync",
+    "proprietaryPrice": "Contact for pricing",
+    "stars": 0,
+    "featured": true,
+    "byok": true
+  }
+]

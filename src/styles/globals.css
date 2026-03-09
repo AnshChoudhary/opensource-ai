@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-xl bg-gray-900/80 border border-gray-800/50;
+  }
+
+  .frosted-glass {
+    @apply backdrop-blur-xl bg-gray-900/60 border border-gray-800/30 shadow-xl;
+  }
+
+  .frosted-glass-light {
+    @apply backdrop-blur-xl bg-gray-900/40 border border-gray-800/20 shadow-lg;
+  }
+
+  .code-block {
+    @apply bg-gray-900 border border-gray-800 rounded-lg p-4 font-mono text-sm;
+  }
+
+  .terminal-line {
+    @apply text-green-400;
+  }
+
+  .terminal-prompt {
+    @apply text-blue-400;
+  }
+}
