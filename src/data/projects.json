@@ -14,5 +14,21 @@
     "stars": 0,
     "featured": true,
     "byok": true
+  },
+  {
+    "id": "2",
+    "name": "AI Pentester",
+    "description": "Open-source alternative to Hex Security. Autonomous AI pentester that runs continuous penetration tests against your apps and infrastructure, finding and verifying critical vulnerabilities.",
+    "longDescription": "Hex Security charges for AI agents that automate penetration testing. Shannon is a fully autonomous, white-box AI pentester that analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production. It performs white-box security testing by combining source code analysis with live exploitation across OWASP categories (Injection, XSS, SSRF, Broken Authentication/Authorization). Shannon operates with a 'no exploit, no report' policy—only proven vulnerabilities with reproducible PoCs are included. This fork includes comprehensive performance and cost optimizations targeting 60-85% reduction in runtime and costs: incremental scanning (only analyzes changed files, 80-90% cost reduction for small changes), caching system (30-50% faster), context prioritization (focuses on high-risk code paths), model tier optimization (uses smaller models when appropriate, 20-40% cost reduction), and parallel execution optimization. Run it continuously, self-hosted, with your own API keys. No monthly subscriptions, no vendor lock-in.",
+    "githubUrl": "https://github.com/AnshChoudhary/shannon/tree/feature/performance-cost-optimization",
+    "tags": ["Security", "Penetration Testing", "AI Agents", "OWASP", "Cybersecurity"],
+    "techStack": ["TypeScript", "Docker", "Claude API", "Browser Automation", "Temporal"],
+    "ycBatch": "W26",
+    "startupName": "Hex Security",
+    "proprietaryService": "Hex Security",
+    "proprietaryPrice": "Contact for pricing",
+    "stars": 0,
+    "featured": true,
+    "byok": true
   }
 ]

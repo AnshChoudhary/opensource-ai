@@ -22,7 +22,7 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg text-gray-900 dark:text-gray-300 hover:border-accent-500/50 transition-colors font-mono text-sm"
+        className="flex items-center space-x-2 rounded-lg border border-[#352e27] bg-[#1b1713] px-4 py-2 text-sm text-[#f7efe7] transition-colors hover:border-[#52473d]"
       >
         <span>Sort: {options.find((o) => o.value === value)?.label}</span>
         <ChevronDown size={16} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -33,7 +33,7 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute top-full mt-2 right-0 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl z-20 min-w-[200px]">
+          <div className="absolute top-full right-0 z-20 mt-2 min-w-[220px] rounded-xl border border-[#352e27] bg-[#1b1713] shadow-[0_24px_60px_rgba(0,0,0,0.3)]">
             {options.map((option) => (
               <button
                 key={option.value}
@@ -41,10 +41,10 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
                   onChange(option.value);
                   setIsOpen(false);
                 }}
-                className={`w-full text-left px-4 py-2 text-sm font-mono transition-colors ${
+                className={`w-full px-4 py-2 text-left text-sm transition-colors ${
                   value === option.value
-                    ? 'bg-gray-100 dark:bg-gray-800 text-accent-500'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50'
+                    ? 'bg-accent-500/12 text-accent-400'
+                    : 'text-[#d5ccc1] hover:bg-[#26211c]'
                 }`}
               >
                 {option.label}

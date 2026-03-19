@@ -14,107 +14,106 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
+      className="h-full"
     >
       <Link
         to={`/project/${project.id}`}
-        className="group block h-full frosted-glass rounded-lg p-6 hover:border-accent-500/50 hover:bg-gray-50/70 dark:hover:bg-gray-900/70 transition-all duration-300 relative overflow-hidden"
+        className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#302922] bg-[#1d1915] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#4a3c30] hover:bg-[#221d18]"
       >
-        {project.featured && (
-          <div className="absolute top-4 right-4 backdrop-blur-xl bg-gray-100/80 dark:bg-gray-800/80 border border-accent-500/50 text-accent-500 text-xs font-mono px-2 py-1 rounded">
-            {'[FEATURED]'}
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          {project.featured && (
+            <div className="rounded-full border border-accent-500/40 bg-accent-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-400">
+              Featured
+            </div>
+          )}
+          <div className="rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-[#b7aea3]">
+            Batch {project.ycBatch}
           </div>
-        )}
-        
-        <div className="flex items-start justify-between mb-4">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent-500 transition-colors font-mono pr-8">
-            {project.name}
-          </h3>
           {project.stars !== undefined && (
-            <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400 text-sm">
-              <Star size={16} className="fill-accent-500/50 text-accent-500/50" />
-              <span className="font-mono">{project.stars.toLocaleString()}</span>
+            <div className="flex items-center space-x-1 rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-[11px] text-[#b7aea3]">
+              <Star size={12} className="fill-accent-500/25 text-accent-500" />
+              <span>{project.stars.toLocaleString()} stars</span>
             </div>
           )}
         </div>
 
-        <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 leading-relaxed text-sm">
+        <h3 className="mb-3 text-2xl font-semibold tracking-tight leading-8 text-[#fff7ef] transition-colors group-hover:text-white">
+          {project.name}
+        </h3>
+
+        <p className="mb-5 line-clamp-3 text-[13px] leading-6 text-[#b7aea3]">
           {project.description}
         </p>
 
-        {/* Comparison Section */}
-        <div className="mb-4 p-3 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center space-x-2">
-              <DollarSign size={14} className="text-red-400" />
-              <span className="text-xs text-gray-500 font-mono">Proprietary:</span>
-            </div>
-            <span className="text-xs text-gray-600 dark:text-gray-400 font-mono">{project.proprietaryService}</span>
+        <div className="mb-5 grid grid-cols-2 gap-3">
+          <div className="rounded-xl border border-[#342c26] bg-[#181410] p-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#8f857a]">
+              Replaces
+            </p>
+            <p className="mt-2 text-sm font-medium leading-5 text-[#f3ece5]">{project.startupName}</p>
           </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span className="text-xs text-gray-500 font-mono">Price:</span>
-            </div>
-            <span className="text-xs text-red-400 font-mono font-semibold">{project.proprietaryPrice}</span>
-          </div>
-          <div className="mt-2 pt-2 border-t border-gray-200 dark:border-gray-700/50 flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span className="text-xs text-accent-500 font-mono">{'→'} Open Alternative:</span>
-            </div>
-            <span className="text-xs text-accent-500 font-mono font-semibold">$0/month</span>
+          <div className="rounded-xl border border-[#342c26] bg-[#181410] p-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#8f857a]">
+              Proprietary Price
+            </p>
+            <p className="mt-2 inline-flex items-center gap-1 text-sm font-semibold leading-5 text-[#ffb37e]">
+              <DollarSign size={14} className="text-accent-500" />
+              {project.proprietaryPrice}
+            </p>
           </div>
         </div>
 
-        <div className="flex items-center justify-between mb-4 text-sm">
-          <span className="font-semibold text-gray-700 dark:text-gray-300 font-mono text-xs">Replaces: {project.startupName}</span>
-          <span className="px-2 py-1 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-accent-500 rounded border border-accent-500/30 font-mono text-xs">
-            YC_{project.ycBatch}
+        <div className="mb-4 flex flex-wrap items-center gap-2 text-sm">
+          <span className="rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-xs text-[#d8cfc4]">
+            {project.proprietaryService}
           </span>
+          <span className="text-sm font-semibold text-accent-400">$0/month app fee</span>
         </div>
 
         {project.byok && (
-          <div className="mb-4 flex items-center space-x-2 text-xs text-gray-500 font-mono">
-            <Key size={12} className="text-accent-500" />
-            <span>BYOK - Bring Your Own Key</span>
+          <div className="mb-4 flex items-center space-x-2 text-xs text-accent-400">
+            <Key size={12} />
+            <span>Bring your own model key</span>
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="mb-5 flex flex-wrap gap-2">
           {project.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-gray-600 dark:text-gray-400 text-xs font-mono rounded border border-gray-200 dark:border-gray-700/50"
+              className="rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-xs text-[#c8beb1]"
             >
               {tag}
             </span>
           ))}
           {project.tags.length > 3 && (
-            <span className="px-2 py-1 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-gray-500 dark:text-gray-500 text-xs font-mono rounded border border-gray-200 dark:border-gray-700/50">
+            <span className="rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-xs text-[#8f857a]">
               +{project.tags.length - 3}
             </span>
           )}
         </div>
 
-        <div className="flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-800/50">
+        <div className="mt-auto flex items-center space-x-4 border-t border-[#2d2721] pt-4">
           <a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors font-mono text-sm"
+            className="flex items-center space-x-2 text-sm text-[#c8beb1] hover:text-white"
             onClick={(e) => e.stopPropagation()}
           >
             <Github size={16} />
-            <span>github</span>
+            <span>GitHub</span>
           </a>
           {project.websiteUrl && (
             <a
               href={project.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors font-mono text-sm"
+              className="flex items-center space-x-2 text-sm text-[#c8beb1] hover:text-white"
               onClick={(e) => e.stopPropagation()}
             >
               <ExternalLink size={16} />
-              <span>website</span>
+              <span>Website</span>
             </a>
           )}
         </div>

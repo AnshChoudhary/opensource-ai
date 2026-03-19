@@ -23,13 +23,14 @@ export default {
           950: '#0a0a0f',
         },
         accent: {
-          400: '#34d399', // green-400
-          500: '#10b981', // green-500
-          600: '#059669', // green-600
+          400: '#ff8a42',
+          500: '#ff6600',
+          600: '#e65c00',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Newsreader', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {

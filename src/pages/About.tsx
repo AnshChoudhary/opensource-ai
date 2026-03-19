@@ -1,23 +1,25 @@
-import { Github, Mail, Code2, Shield, Lock, DollarSign } from 'lucide-react';
+import { Github, Mail, Code2, Shield, Lock, DollarSign, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="min-h-screen">
+      <div className="mx-auto max-w-[1080px] px-6 py-16 sm:px-8 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 frosted-glass border-accent-500/30 rounded-lg mb-6">
-            <Code2 className="w-8 h-8 text-accent-500" />
+          <div className="yc-pill mb-6">
+            <Code2 className="mr-2 h-4 w-4 text-accent-500" />
+            Why this project exists
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-            <span className="text-accent-500">{'//'}</span> About Y_Decombinator
+          <h1 className="max-w-3xl font-display text-4xl text-[#fff7ef] md:text-5xl">
+            Open-sourcing the products people keep trying to rent back to you.
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 font-mono">
-            Open-source alternatives to YC AI startups. Free alternatives to paid services.
+          <p className="mt-5 max-w-2xl text-base leading-7 text-[#b7aea3]">
+            This project catalogs open-source AI tools that cover the same jobs as startup products,
+            so builders can run them directly, inspect the code, and keep control of their data.
           </p>
         </motion.div>
 
@@ -26,24 +28,23 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-              <span className="text-accent-500">{'//'}</span> Our Mission
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              Our mission
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              This is a critical commentary on the VC-backed "wrapper" startup culture. We believe 
-              that many Y Combinator startups are selling UIs for public AI models—features, not companies. 
-              The logic of the modern web belongs in the open, not behind subscription fees.
+            <p className="mb-4 leading-7 text-[#b7aea3]">
+              A large share of AI startups package public models behind a polished interface, recurring
+              pricing, and closed infrastructure. In many cases, the defensible part is thin while the
+              user still pays like they are buying something irreplaceable.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              We provide free, open-source alternatives to demonstrate that these services don't need 
-              to be venture-backed companies. Software should be open. Features shouldn't require 
-              monthly subscriptions.
+            <p className="mb-4 leading-7 text-[#b7aea3]">
+              We want to make those product ideas legible, reproducible, and open. If the workflow can be
+              built transparently and hosted by the user, it should be easy to discover an open-source path.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              <span className="text-accent-500 font-mono">{'>'}</span> This is social criticism, not a commercial directory. 
-              We're exposing the "wrapper" problem and offering alternatives.
+            <p className="leading-7 text-[#d7cdc1]">
+              This is partly a directory and partly a point of view: software should be understandable,
+              portable, and much easier to own.
             </p>
           </motion.section>
 
@@ -51,68 +52,54 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-mono">
-              <span className="text-accent-500">{'//'}</span> Why This Matters
+            <h2 className="mb-6 text-2xl font-semibold text-[#fff7ef]">
+              Why this matters
             </h2>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-gray-100/60 dark:bg-gray-800/60 rounded border border-gray-200 dark:border-gray-700/50">
-                  <Code2 className="w-6 h-6 text-accent-500" />
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-6">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#3c332c] bg-[#211b16]">
+                  <Code2 className="h-5 w-5 text-accent-500" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">The Problem</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Many startups provide a specific UI for a general AI task (e.g., "AI for legal PDFs" 
-                    or "AI for SQL queries"). These are features, not companies. A single well-maintained 
-                    open-source tool can offer the same utility without the monthly B2B subscription fee.
-                  </p>
-                </div>
+                <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">Feature inflation</h3>
+                <p className="leading-7 text-[#b7aea3]">
+                  Many AI products are narrow workflows wrapped around a model call. A strong open-source
+                  tool can often deliver the same utility without recurring SaaS markup.
+                </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-gray-100/60 dark:bg-gray-800/60 rounded border border-gray-200 dark:border-gray-700/50">
-                  <Shield className="w-6 h-6 text-accent-500" />
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-6">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#3c332c] bg-[#211b16]">
+                  <Shield className="h-5 w-5 text-accent-500" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">Data Sovereignty & Privacy</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    When you use a B2B startup, your data is their product. Open-sourcing these services 
-                    allows users to host them locally (or on their own cloud), ensuring sensitive information 
-                    never leaves their sight. You control your data, not a third-party vendor.
-                  </p>
-                </div>
+                <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">Data ownership</h3>
+                <p className="leading-7 text-[#b7aea3]">
+                  Self-hostable tools let teams keep sensitive inputs on their own machines or cloud
+                  accounts instead of routing everything through another vendor.
+                </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-gray-100/60 dark:bg-gray-800/60 rounded border border-gray-200 dark:border-gray-700/50">
-                  <DollarSign className="w-6 h-6 text-accent-500" />
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-6">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#3c332c] bg-[#211b16]">
+                  <DollarSign className="h-5 w-5 text-accent-500" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">Preventing "Feature-as-a-Service"</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    We believe that specialized AI tools (like PDF summarizers or SQL generators) are features, 
-                    not companies. They belong in the public domain as utilities, not behind a corporate paywall. 
-                    By providing free alternatives, we lower barriers for students, researchers, and small creators.
-                  </p>
-                </div>
+                <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">Cost clarity</h3>
+                <p className="leading-7 text-[#b7aea3]">
+                  Open tools make it clearer what you are really paying for: model usage, hosting, and
+                  product polish, rather than a mystery bundle hidden in monthly pricing.
+                </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-2 bg-gray-100/60 dark:bg-gray-800/60 rounded border border-gray-200 dark:border-gray-700/50">
-                  <Lock className="w-6 h-6 text-accent-500" />
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-6">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#3c332c] bg-[#211b16]">
+                  <Lock className="h-5 w-5 text-accent-500" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">Low Technical Moats</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Because many startups rely on the same third-party APIs (OpenAI, Anthropic), they don't 
-                    own the underlying "engine." If the tech is easy to replicate, it should be a public good 
-                    rather than a venture-backed company. We're doing the opposite of what some startups do—taking 
-                    closed ideas and returning them to the open-source ecosystem.
-                  </p>
-                </div>
+                <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">Lower lock-in</h3>
+                <p className="leading-7 text-[#b7aea3]">
+                  Open implementations give users leverage. You can fork, inspect, customize, and migrate
+                  instead of rebuilding your workflow every time a startup changes pricing or disappears.
+                </p>
               </div>
             </div>
           </motion.section>
@@ -121,49 +108,57 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-              <span className="text-accent-500">{'//'}</span> Bring Your Own Key (BYOK)
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              Bring your own key
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              We're honest about costs. While our services are free and open-source, you'll need to provide 
-              your own API keys (OpenAI, Anthropic, etc.) for the underlying models. This means:
+            <p className="mb-4 leading-7 text-[#b7aea3]">
+              Most of these tools are not magic. They still rely on models, hosting, and infrastructure.
+              When a project is BYOK, you bring the model account and pay directly for usage.
             </p>
-            <ul className="list-none space-y-2 text-gray-600 dark:text-gray-400 ml-4 font-mono">
-              <li><span className="text-accent-500">{'•'}</span> You pay for what you use, not for the privilege of using it</li>
-              <li><span className="text-accent-500">{'•'}</span> No monthly subscription fees or vendor lock-in</li>
-              <li><span className="text-accent-500">{'•'}</span> Complete control over your API usage and costs</li>
-              <li><span className="text-accent-500">{'•'}</span> Option to run local models for zero API costs</li>
-            </ul>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                You pay for actual model usage instead of a bundled subscription.
+              </div>
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                You control rate limits, providers, and switching costs.
+              </div>
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                You can swap APIs or run local models when the stack supports it.
+              </div>
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                You keep a clearer line between software cost and model cost.
+              </div>
+            </div>
           </motion.section>
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-              <span className="text-accent-500">{'//'}</span> How It Works
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              How to think about the stack
             </h2>
-            <div className="space-y-4">
-              <div className="p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 font-mono">B2B Stack (What You're Replacing)</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-mono mb-2">
-                  User → Proprietary Layer → Subscription Fee → AI Model
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-6">
+                <h3 className="mb-2 text-lg font-semibold text-[#fff7ef]">Closed product path</h3>
+                <p className="mb-2 text-sm text-[#d7cdc1]">
+                  User → Proprietary layer → Monthly fee → Model provider
                 </p>
-                <p className="text-gray-500 dark:text-gray-500 text-xs">
-                  Your data goes through a third-party server. You pay monthly regardless of usage.
+                <p className="text-xs leading-6 text-[#8f857a]">
+                  Usually faster to buy, but harder to inspect, move, or adapt.
                 </p>
               </div>
-              <div className="p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-accent-500/30">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 font-mono">Open-Source Stack (Our Alternative)</h3>
-                <p className="text-accent-500 text-sm font-mono mb-2">
-                  User → Open-Source Interface → Your API Key → AI Model
+              <div className="rounded-2xl border border-accent-500/25 bg-accent-500/5 p-6">
+                <h3 className="mb-2 text-lg font-semibold text-[#fff7ef]">Open product path</h3>
+                <p className="mb-2 text-sm text-accent-400">
+                  User → Open-source app → Your key or local model → Your infrastructure
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 text-xs">
-                  Direct connection. You control the data. Pay only for API usage (or run locally for free).
+                <p className="text-xs leading-6 text-[#b7aea3]">
+                  Slightly more hands-on, but far more portable, inspectable, and customizable.
                 </p>
               </div>
             </div>
@@ -173,31 +168,33 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-mono">
-              <span className="text-accent-500">{'//'}</span> Contribute
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              Contribute
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              Found a YC startup that's just wrapping an API? Built an open-source alternative? 
-              We'd love to feature it. This is a community effort to democratize AI utilities.
+            <p className="mb-6 leading-7 text-[#b7aea3]">
+              Built an open-source alternative? Found a startup category that should have a public, reusable
+              implementation? Send it over. The goal is to make good tools easier to find and easier to run.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/AnshChoudhary/opensource-ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-3 frosted-glass-light hover:border-accent-500 px-6 py-3 rounded-lg transition-colors group"
+                className="group inline-flex items-center gap-3 rounded-xl border border-[#352d27] bg-[#221d18] px-6 py-3 text-[#f7efe7] hover:border-[#51443a]"
               >
-                <Github size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
-                <span className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">github</span>
+                <Github size={20} className="text-[#b7aea3] group-hover:text-white" />
+                <span className="font-semibold">GitHub</span>
+                <ArrowRight size={16} className="text-accent-500" />
               </a>
               <a
                 href="mailto:anshc19@gmail.com"
-                className="flex items-center space-x-3 frosted-glass-light hover:border-accent-500 px-6 py-3 rounded-lg transition-colors group"
+                className="group inline-flex items-center gap-3 rounded-xl border border-[#352d27] bg-[#221d18] px-6 py-3 text-[#f7efe7] hover:border-[#51443a]"
               >
-                <Mail size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
-                <span className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">email</span>
+                <Mail size={20} className="text-[#b7aea3] group-hover:text-white" />
+                <span className="font-semibold">Email</span>
+                <ArrowRight size={16} className="text-accent-500" />
               </a>
             </div>
           </motion.section>
@@ -206,16 +203,14 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="frosted-glass rounded-lg p-8"
+            className="rounded-2xl border border-accent-500/25 bg-accent-500/5 p-8"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-              <span className="text-accent-500">{'//'}</span> Disclaimer
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              Disclaimer
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Y Decombinator is an independent project and is not affiliated with or endorsed
-              by Y Combinator. This site is maintained by developers who believe AI utilities 
-              should be open-source, not locked behind subscription fees. We're doing the opposite 
-              of what some startups do—taking closed ideas and returning them to the public domain.
+            <p className="leading-7 text-[#d7cdc1]">
+              This is an independent project. Product names and brands are referenced for commentary and
+              comparison only. The aim is to document open alternatives, not imply endorsement or affiliation.
             </p>
           </motion.section>
         </div>

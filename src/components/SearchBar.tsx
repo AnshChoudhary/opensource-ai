@@ -19,20 +19,20 @@ export default function SearchBar({
       className="relative max-w-2xl mx-auto"
     >
       <div className="relative">
-        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent-500 font-mono text-sm">
-          {'>'}
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-medium text-accent-400">
+          Search
         </div>
         <input
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-8 pr-12 py-4 text-gray-900 dark:text-gray-100 frosted-glass rounded-lg focus:outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all placeholder-gray-500 dark:placeholder-gray-600 font-mono"
+          className="w-full rounded-xl border border-[#302922] bg-[#1b1713] py-4 pl-20 pr-12 text-[#f7efe7] shadow-[0_14px_40px_rgba(0,0,0,0.22)] transition-all placeholder:text-[#7d7368] focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/15"
         />
         {value && (
           <button
             onClick={() => onChange('')}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 text-gray-500 hover:text-accent-500 transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-[#8f857a] hover:text-accent-400 transition-colors"
           >
             <X size={18} />
           </button>

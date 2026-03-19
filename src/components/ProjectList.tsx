@@ -16,13 +16,13 @@ export default function ProjectList({ projects }: ProjectListProps) {
         className="text-center py-16"
       >
         <div className="max-w-md mx-auto">
-          <div className="w-24 h-24 mx-auto mb-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg flex items-center justify-center">
-            <div className="text-gray-600 font-mono text-4xl">{'{}'}</div>
+          <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-2xl border border-[#2f2923] bg-[#1c1814]">
+            <div className="text-2xl font-semibold text-accent-500">{'</>'}</div>
           </div>
-          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2 font-mono">
-            {'//'} No projects found
+          <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">
+            No projects found
           </h3>
-          <p className="text-gray-500 font-mono text-sm">
+          <p className="text-sm text-[#9f958a]">
             Try adjusting your search or filters
           </p>
         </div>
@@ -41,59 +41,57 @@ export default function ProjectList({ projects }: ProjectListProps) {
         >
           <Link
             to={`/project/${project.id}`}
-            className="group block frosted-glass rounded-lg p-6 hover:border-accent-500/50 hover:bg-gray-50/70 dark:hover:bg-gray-900/70 transition-all duration-300"
+            className="group block rounded-2xl border border-[#302922] bg-[#1d1915] p-6 transition-all duration-300 hover:border-[#4a3c30] hover:bg-[#221d18]"
           >
             <div className="flex items-start justify-between">
               <div className="flex-1 min-w-0">
-                <div className="flex items-center space-x-3 mb-2">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent-500 transition-colors font-mono">
+                <div className="mb-2 flex flex-wrap items-center gap-3">
+                  <h3 className="text-xl font-semibold text-[#fff7ef] transition-colors group-hover:text-white">
                     {project.name}
                   </h3>
                   {project.featured && (
-                    <span className="backdrop-blur-xl bg-gray-100/80 dark:bg-gray-800/80 border border-accent-500/50 text-accent-500 text-xs font-mono px-2 py-1 rounded">
-                      {'[FEATURED]'}
+                    <span className="rounded-full border border-accent-500/40 bg-accent-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-400">
+                      Featured
                     </span>
                   )}
                   {project.stars !== undefined && (
-                    <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400 text-sm">
-                      <Star size={14} className="fill-accent-500/50 text-accent-500/50" />
-                      <span className="font-mono text-xs">{project.stars.toLocaleString()}</span>
+                    <div className="flex items-center space-x-1 text-sm text-[#b7aea3]">
+                      <Star size={14} className="fill-accent-500/25 text-accent-500" />
+                      <span className="text-xs">{project.stars.toLocaleString()}</span>
                     </div>
                   )}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-3 text-sm leading-relaxed">
+                <p className="mb-3 text-sm leading-relaxed text-[#b7aea3]">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap items-center gap-4 text-xs">
-                  <div className="flex items-center space-x-2">
-                    <DollarSign size={12} className="text-red-400" />
-                    <span className="text-gray-500 font-mono">Replaces:</span>
-                    <span className="text-gray-700 dark:text-gray-300 font-mono">{project.proprietaryService}</span>
-                    <span className="text-red-400 font-mono">{project.proprietaryPrice}</span>
+                  <div className="flex items-center space-x-2 text-[#b7aea3]">
+                    <DollarSign size={12} className="text-accent-500" />
+                    <span>{project.proprietaryService}</span>
+                    <span className="text-[#ffb37e]">{project.proprietaryPrice}</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-accent-500 font-mono">{'→'}</span>
-                    <span className="text-gray-700 dark:text-gray-300 font-mono">{project.name}</span>
-                    <span className="text-accent-500 font-mono">$0/month</span>
+                  <div className="flex items-center space-x-2 text-[#d8cfc4]">
+                    <span>YC {project.ycBatch}</span>
+                    <span className="text-accent-400">$0/month app fee</span>
                   </div>
                   {project.byok && (
-                    <div className="flex items-center space-x-1 text-accent-500">
+                    <div className="flex items-center space-x-1 text-accent-400">
                       <Key size={12} />
-                      <span className="font-mono">BYOK</span>
+                      <span>BYOK</span>
                     </div>
                   )}
                 </div>
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {project.tags.slice(0, 4).map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-gray-600 dark:text-gray-400 text-xs font-mono rounded border border-gray-200 dark:border-gray-700/50"
+                      className="rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-xs text-[#c8beb1]"
                     >
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 4 && (
-                    <span className="px-2 py-1 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-gray-500 dark:text-gray-500 text-xs font-mono rounded border border-gray-200 dark:border-gray-700/50">
+                    <span className="rounded-full border border-[#3a322b] bg-[#211c17] px-2.5 py-1 text-xs text-[#8f857a]">
                       +{project.tags.length - 4}
                     </span>
                   )}
@@ -104,7 +102,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                  className="rounded-lg border border-[#342d26] p-2 text-[#b7aea3] transition-colors hover:border-[#51443a] hover:text-white"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Github size={18} />
@@ -114,7 +112,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
                     href={project.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                    className="rounded-lg border border-[#342d26] p-2 text-[#b7aea3] transition-colors hover:border-[#51443a] hover:text-white"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink size={18} />

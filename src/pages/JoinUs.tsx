@@ -1,23 +1,25 @@
-import { Github, Mail, Code2, Star, Users, Zap } from 'lucide-react';
+import { Github, Mail, Code2, Star, Users, Zap, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function JoinUs() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="min-h-screen">
+      <div className="mx-auto max-w-[1080px] px-6 py-16 sm:px-8 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 frosted-glass border-accent-500/30 rounded-lg mb-6">
-            <Users className="w-8 h-8 text-accent-500" />
+          <div className="yc-pill mb-6">
+            <Users className="mr-2 h-4 w-4 text-accent-500" />
+            Submit a project
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-            <span className="text-accent-500">{'//'}</span> Join Us
+          <h1 className="max-w-3xl font-display text-4xl text-[#fff7ef] md:text-5xl">
+            Help expand the catalog of open-source AI startup alternatives.
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 font-mono">
-            Help us open-source AI alternatives. Get featured on our website.
+          <p className="mt-5 max-w-2xl text-base leading-7 text-[#b7aea3]">
+            If you have built a strong open-source tool or know a category that deserves a better public
+            implementation, send it in. We want this directory to be useful, sharp, and well maintained.
           </p>
         </motion.div>
 
@@ -26,24 +28,24 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="p-3 bg-gray-100/60 dark:bg-gray-800/60 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <Code2 className="w-6 h-6 text-accent-500" />
+            <div className="mb-6 flex items-start space-x-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#3c332c] bg-[#211b16]">
+                <Code2 className="h-5 w-5 text-accent-500" />
               </div>
               <div className="flex-1">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-                  <span className="text-accent-500">{'//'}</span> We're Looking for Developers
+                <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+                  What we want to feature
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                  We're building a community of developers who believe software should be open. 
-                  If you've built an open-source alternative to a Y Combinator AI startup, or want 
-                  to help create one, we'd love to feature your work.
+                <p className="mb-4 leading-7 text-[#b7aea3]">
+                  We are looking for open-source products that solve the same user job as an AI startup:
+                  document workflows, coding helpers, research tools, sales automation, security copilots,
+                  and other narrow AI applications.
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  By contributing, you're not just sharing code—you're challenging the "wrapper" 
-                  startup culture and making AI utilities accessible to everyone.
+                <p className="leading-7 text-[#b7aea3]">
+                  The best submissions are usable, documented, and clear about how they work. They do not
+                  need to be huge. They just need to be real and valuable.
                 </p>
               </div>
             </div>
@@ -53,52 +55,52 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-mono">
-              <span className="text-accent-500">{'//'}</span> How to Get Featured
+            <h2 className="mb-6 text-2xl font-semibold text-[#fff7ef]">
+              How to get featured
             </h2>
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-accent-500/20 border border-accent-500/50 rounded-lg flex items-center justify-center">
-                  <span className="text-accent-500 font-mono font-bold">1</span>
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-accent-500/35 bg-accent-500/10">
+                  <span className="font-semibold text-accent-400">1</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">Build an Open-Source Alternative</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Create an open-source project that provides the same functionality as a Y Combinator 
-                    AI startup. It should be free, self-hostable, and use your own API keys (BYOK).
+                  <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">Build something usable</h3>
+                  <p className="leading-7 text-[#b7aea3]">
+                    Your project should solve a concrete workflow, be open-source, and preferably be
+                    runnable with your own keys or local models.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-accent-500/20 border border-accent-500/50 rounded-lg flex items-center justify-center">
-                  <span className="text-accent-500 font-mono font-bold">2</span>
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-accent-500/35 bg-accent-500/10">
+                  <span className="font-semibold text-accent-400">2</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">Submit Your Project</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Open a pull request on our GitHub repository or email us with:
+                  <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">Send the details</h3>
+                  <p className="leading-7 text-[#b7aea3]">
+                    Open a pull request on GitHub or email the core details:
                   </p>
-                  <ul className="list-none space-y-2 text-gray-600 dark:text-gray-400 ml-4 mt-2 font-mono text-sm">
-                    <li><span className="text-accent-500">{'•'}</span> Project name and description</li>
-                    <li><span className="text-accent-500">{'•'}</span> GitHub repository URL</li>
-                    <li><span className="text-accent-500">{'•'}</span> Which YC startup it replaces</li>
-                    <li><span className="text-accent-500">{'•'}</span> Tech stack and tags</li>
+                  <ul className="mt-3 space-y-2 text-sm text-[#d7cdc1]">
+                    <li>Project name and one-sentence description</li>
+                    <li>GitHub repository URL and demo URL if available</li>
+                    <li>What product or category it replaces</li>
+                    <li>Key tags, stack details, and whether it is BYOK</li>
                   </ul>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-accent-500/20 border border-accent-500/50 rounded-lg flex items-center justify-center">
-                  <span className="text-accent-500 font-mono font-bold">3</span>
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-accent-500/35 bg-accent-500/10">
+                  <span className="font-semibold text-accent-400">3</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-mono">Get Featured</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Once approved, your project will be featured on our website with your GitHub profile, 
-                    project description, and links. Popular projects get the "Featured" badge.
+                  <h3 className="mb-2 text-xl font-semibold text-[#fff7ef]">We review and publish it</h3>
+                  <p className="leading-7 text-[#b7aea3]">
+                    Once approved, the project is added to the directory with its links, category fit,
+                    and any relevant notes that help users evaluate it quickly.
                   </p>
                 </div>
               </div>
@@ -109,46 +111,46 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-mono">
-              <span className="text-accent-500">{'//'}</span> What We're Looking For
+            <h2 className="mb-6 text-2xl font-semibold text-[#fff7ef]">
+              What we look for
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <div className="flex items-center space-x-2 mb-2">
-                  <Star className="w-5 h-5 text-accent-500" />
-                  <h3 className="font-bold text-gray-900 dark:text-white font-mono">Quality Projects</h3>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-5">
+                <div className="mb-2 flex items-center space-x-2">
+                  <Star className="h-5 w-5 text-accent-500" />
+                  <h3 className="font-semibold text-[#fff7ef]">Quality</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Well-documented, maintained, and actually functional alternatives
+                <p className="text-sm leading-6 text-[#b7aea3]">
+                  Clear docs, a working product, and enough polish that someone can actually use it.
                 </p>
               </div>
-              <div className="p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <div className="flex items-center space-x-2 mb-2">
-                  <Zap className="w-5 h-5 text-accent-500" />
-                  <h3 className="font-bold text-gray-900 dark:text-white font-mono">Active Development</h3>
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-5">
+                <div className="mb-2 flex items-center space-x-2">
+                  <Zap className="h-5 w-5 text-accent-500" />
+                  <h3 className="font-semibold text-[#fff7ef]">Active development</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Projects that are actively maintained and improving
+                <p className="text-sm leading-6 text-[#b7aea3]">
+                  We prefer tools that are being maintained and improved, not abandoned experiments.
                 </p>
               </div>
-              <div className="p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <div className="flex items-center space-x-2 mb-2">
-                  <Code2 className="w-5 h-5 text-accent-500" />
-                  <h3 className="font-bold text-gray-900 dark:text-white font-mono">Open Source</h3>
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-5">
+                <div className="mb-2 flex items-center space-x-2">
+                  <Code2 className="h-5 w-5 text-accent-500" />
+                  <h3 className="font-semibold text-[#fff7ef]">Open source</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Must be truly open-source with a permissive license
+                <p className="text-sm leading-6 text-[#b7aea3]">
+                  The code should be publicly available and genuinely inspectable.
                 </p>
               </div>
-              <div className="p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <div className="flex items-center space-x-2 mb-2">
-                  <Users className="w-5 h-5 text-accent-500" />
-                  <h3 className="font-bold text-gray-900 dark:text-white font-mono">Community Focus</h3>
+              <div className="rounded-2xl border border-[#342c26] bg-[#181410] p-5">
+                <div className="mb-2 flex items-center space-x-2">
+                  <Users className="h-5 w-5 text-accent-500" />
+                  <h3 className="font-semibold text-[#fff7ef]">Usefulness</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Projects that benefit the developer community
+                <p className="text-sm leading-6 text-[#b7aea3]">
+                  We want tools that help real users, not just clones made for optics.
                 </p>
               </div>
             </div>
@@ -158,35 +160,23 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-mono">
-              <span className="text-accent-500">{'//'}</span> Benefits of Contributing
+            <h2 className="mb-6 text-2xl font-semibold text-[#fff7ef]">
+              Why contribute
             </h2>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <span className="text-accent-500 font-mono">{'>'}</span>
-                <p className="text-gray-600 dark:text-gray-400">
-                  <strong className="text-gray-900 dark:text-white">Visibility:</strong> Get your project in front of thousands of developers looking for alternatives
-                </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                Get your project in front of users actively looking for open alternatives.
               </div>
-              <div className="flex items-start space-x-3">
-                <span className="text-accent-500 font-mono">{'>'}</span>
-                <p className="text-gray-600 dark:text-gray-400">
-                  <strong className="text-gray-900 dark:text-white">Community:</strong> Join a community of developers who believe in open-source
-                </p>
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                Help shape a public directory that critiques lock-in with actual working software.
               </div>
-              <div className="flex items-start space-x-3">
-                <span className="text-accent-500 font-mono">{'>'}</span>
-                <p className="text-gray-600 dark:text-gray-400">
-                  <strong className="text-gray-900 dark:text-white">Impact:</strong> Help democratize AI tools and challenge the subscription model
-                </p>
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                Make it easier for teams to discover self-hosted or BYOK options.
               </div>
-              <div className="flex items-start space-x-3">
-                <span className="text-accent-500 font-mono">{'>'}</span>
-                <p className="text-gray-600 dark:text-gray-400">
-                  <strong className="text-gray-900 dark:text-white">Recognition:</strong> Featured projects get highlighted with badges and priority placement
-                </p>
+              <div className="rounded-xl border border-[#342c26] bg-[#181410] p-5 text-[#d7cdc1]">
+                Add signal to the ecosystem by documenting what is real, useful, and open.
               </div>
             </div>
           </motion.section>
@@ -195,32 +185,34 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="frosted-glass rounded-lg p-8"
+            className="frosted-glass rounded-2xl p-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-mono">
-              <span className="text-accent-500">{'//'}</span> Get Started
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              Get started
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-              Ready to contribute? Here's how to get in touch:
+            <p className="mb-6 leading-7 text-[#b7aea3]">
+              Ready to submit something? Send a PR or email with the project details and context.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/AnshChoudhary/opensource-ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-3 frosted-glass-light hover:border-accent-500 px-6 py-3 rounded-lg transition-colors group"
+                className="group inline-flex items-center gap-3 rounded-xl border border-[#352d27] bg-[#221d18] px-6 py-3 text-[#f7efe7] hover:border-[#51443a]"
               >
-                <Github size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
-                <span className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">github</span>
-                <span className="text-gray-500 font-mono text-sm">// submit PR</span>
+                <Github size={20} className="text-[#b7aea3] group-hover:text-white" />
+                <span className="font-semibold">GitHub</span>
+                <span className="text-sm text-[#8f857a]">Submit PR</span>
+                <ArrowRight size={16} className="text-accent-500" />
               </a>
               <a
                 href="mailto:anshc19@gmail.com"
-                className="flex items-center space-x-3 frosted-glass-light hover:border-accent-500 px-6 py-3 rounded-lg transition-colors group"
+                className="group inline-flex items-center gap-3 rounded-xl border border-[#352d27] bg-[#221d18] px-6 py-3 text-[#f7efe7] hover:border-[#51443a]"
               >
-                <Mail size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
-                <span className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">email</span>
-                <span className="text-gray-500 font-mono text-sm">// anshc19@gmail.com</span>
+                <Mail size={20} className="text-[#b7aea3] group-hover:text-white" />
+                <span className="font-semibold">Email</span>
+                <span className="text-sm text-[#8f857a]">anshc19@gmail.com</span>
+                <ArrowRight size={16} className="text-accent-500" />
               </a>
             </div>
           </motion.section>
@@ -229,14 +221,14 @@ export default function JoinUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="frosted-glass rounded-lg p-8 border-accent-500/30"
+            className="rounded-2xl border border-accent-500/25 bg-accent-500/5 p-8"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-              <span className="text-accent-500">{'//'}</span> Questions?
+            <h2 className="mb-4 text-2xl font-semibold text-[#fff7ef]">
+              Questions?
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Have questions about contributing or want to discuss a project idea? Reach out! 
-              We're always looking for passionate developers who want to make AI tools more accessible.
+            <p className="leading-7 text-[#d7cdc1]">
+              If you want to discuss whether a tool fits the directory before submitting it, reach out.
+              Strong curation matters as much as growth.
             </p>
           </motion.section>
         </div>

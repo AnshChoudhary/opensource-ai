@@ -37,32 +37,32 @@ export default function FilterTags({
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
-      className="frosted-glass rounded-lg p-6 sticky top-24"
+      className="frosted-glass sticky top-24 rounded-2xl p-6"
     >
       {hasActiveFilters && (
         <button
           onClick={onClearFilters}
-          className="w-full flex items-center justify-center space-x-2 px-4 py-2 mb-6 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:text-accent-500 rounded-lg transition-colors text-sm font-mono border border-gray-200 dark:border-gray-700/50"
+          className="mb-6 flex w-full items-center justify-center space-x-2 rounded-lg border border-[#3b332c] bg-[#231d18] px-4 py-2 text-sm text-[#f3ece5] transition-colors hover:border-[#52473d] hover:bg-[#2a231d]"
         >
           <X size={16} />
-          <span>clear_filters()</span>
+          <span>Clear filters</span>
         </button>
       )}
 
       {allBatches.length > 0 && (
         <div className="mb-6">
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 font-mono">
-            {'//'} YC Batch
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8f857a]">
+            YC Batch
           </h4>
           <div className="flex flex-wrap gap-2">
             {allBatches.map((batch) => (
               <button
                 key={batch}
                 onClick={() => onToggleBatch(batch)}
-                className={`px-3 py-1.5 rounded border text-sm font-mono transition-all backdrop-blur-xl ${
+                className={`rounded-full border px-3 py-1.5 text-sm transition-all ${
                   selectedBatches.includes(batch)
-                    ? 'bg-gray-100/80 dark:bg-gray-800/80 text-accent-500 border-accent-500'
-                    : 'bg-gray-100/40 dark:bg-gray-800/40 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-100/60 dark:hover:bg-gray-800/60'
+                    ? 'border-accent-500 bg-accent-500/12 text-accent-400'
+                    : 'border-[#3a322b] bg-[#1b1713] text-[#b7aea3] hover:border-[#5a4a3d] hover:text-[#f3ece5]'
                 }`}
               >
                 {batch}
@@ -74,18 +74,18 @@ export default function FilterTags({
 
       {allTags.length > 0 && (
         <div className="mb-6">
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 font-mono">
-            {'//'} Tags
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8f857a]">
+            Tags
           </h4>
           <div className="flex flex-wrap gap-2">
             {allTags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => onToggleTag(tag)}
-                className={`px-3 py-1.5 rounded border text-sm font-mono transition-all backdrop-blur-xl ${
+                className={`rounded-full border px-3 py-1.5 text-sm transition-all ${
                   selectedTags.includes(tag)
-                    ? 'bg-gray-100/80 dark:bg-gray-800/80 text-accent-500 border-accent-500'
-                    : 'bg-gray-100/40 dark:bg-gray-800/40 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-100/60 dark:hover:bg-gray-800/60'
+                    ? 'border-accent-500 bg-accent-500/12 text-accent-400'
+                    : 'border-[#3a322b] bg-[#1b1713] text-[#b7aea3] hover:border-[#5a4a3d] hover:text-[#f3ece5]'
                 }`}
               >
                 {tag}
@@ -97,18 +97,18 @@ export default function FilterTags({
 
       {allTechStack.length > 0 && (
         <div>
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 font-mono">
-            {'//'} Tech Stack
+          <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8f857a]">
+            Tech Stack
           </h4>
           <div className="flex flex-wrap gap-2">
             {allTechStack.map((tech) => (
               <button
                 key={tech}
                 onClick={() => onToggleTechStack(tech)}
-                className={`px-3 py-1.5 rounded border text-sm font-mono transition-all backdrop-blur-xl ${
+                className={`rounded-full border px-3 py-1.5 text-sm transition-all ${
                   selectedTechStack.includes(tech)
-                    ? 'bg-gray-100/80 dark:bg-gray-800/80 text-accent-500 border-accent-500'
-                    : 'bg-gray-100/40 dark:bg-gray-800/40 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700/50 hover:border-accent-500/50 hover:text-accent-500/70 hover:bg-gray-100/60 dark:hover:bg-gray-800/60'
+                    ? 'border-accent-500 bg-accent-500/12 text-accent-400'
+                    : 'border-[#3a322b] bg-[#1b1713] text-[#b7aea3] hover:border-[#5a4a3d] hover:text-[#f3ece5]'
                 }`}
               >
                 {tech}

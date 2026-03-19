@@ -7,13 +7,13 @@ interface ViewToggleProps {
 
 export default function ViewToggle({ view, onViewChange }: ViewToggleProps) {
   return (
-    <div className="flex items-center space-x-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-1">
+    <div className="flex items-center space-x-2 rounded-lg border border-[#352e27] bg-[#1b1713] p-1">
       <button
         onClick={() => onViewChange('card')}
         className={`p-2 rounded transition-colors ${
           view === 'card'
-            ? 'bg-gray-200 dark:bg-gray-800 text-accent-500'
-            : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+            ? 'bg-[#2a231d] text-accent-400'
+            : 'text-[#8f857a] hover:text-[#f3ece5]'
         }`}
         aria-label="Card view"
       >
@@ -23,8 +23,8 @@ export default function ViewToggle({ view, onViewChange }: ViewToggleProps) {
         onClick={() => onViewChange('list')}
         className={`p-2 rounded transition-colors ${
           view === 'list'
-            ? 'bg-gray-200 dark:bg-gray-800 text-accent-500'
-            : 'text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
+            ? 'bg-[#2a231d] text-accent-400'
+            : 'text-[#8f857a] hover:text-[#f3ece5]'
         }`}
         aria-label="List view"
       >

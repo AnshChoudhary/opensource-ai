@@ -14,51 +14,51 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen">
+      <div className="mx-auto max-w-[1080px] px-6 sm:px-8 lg:px-8 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <Link
             to="/"
-            className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-accent-500 mb-8 transition-colors font-mono"
+            className="mb-8 inline-flex items-center space-x-2 text-sm font-medium text-[#b7aea3] hover:text-white"
           >
             <ArrowLeft size={20} />
-            <span>{'<'} back_to_alternatives</span>
+            <span>Back to alternatives</span>
           </Link>
 
-          <div className="frosted-glass rounded-lg overflow-hidden">
-            <div className="frosted-glass-light border-b border-gray-200 dark:border-gray-800/50 p-8">
+          <div className="overflow-hidden rounded-2xl border border-[#302922] bg-[#1d1915]">
+            <div className="border-b border-[#2d2721] bg-[#211c17] p-8">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <h1 className="text-4xl font-bold text-gray-900 dark:text-white font-mono">{project.name}</h1>
+                  <div className="mb-3 flex flex-wrap items-center gap-3">
+                    <h1 className="font-display text-3xl text-[#fff7ef] md:text-4xl">{project.name}</h1>
                     {project.featured && (
-                      <span className="inline-flex items-center backdrop-blur-xl bg-gray-100/80 dark:bg-gray-800/80 border border-accent-500/50 text-accent-500 text-xs font-mono px-2 py-1 rounded">
-                        {'[FEATURED]'}
+                      <span className="inline-flex items-center rounded-full border border-accent-500/40 bg-accent-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-accent-400">
+                        Featured
                       </span>
                     )}
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 text-lg mb-4">{project.description}</p>
+                  <p className="mb-4 max-w-2xl text-base leading-7 text-[#b7aea3]">{project.description}</p>
                 </div>
               </div>
 
               <div className="flex flex-wrap items-center gap-4">
                 {project.stars !== undefined && (
-                  <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center space-x-2 text-[#b7aea3]">
                     <Star size={20} className="text-accent-500 fill-accent-500/20" />
-                    <span className="font-mono">{project.stars.toLocaleString()} stars</span>
+                    <span>{project.stars.toLocaleString()} stars</span>
                   </div>
                 )}
-                <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-2 text-[#b7aea3]">
                   <Calendar size={20} />
-                  <span className="font-mono">YC_{project.ycBatch}</span>
+                  <span>YC {project.ycBatch}</span>
                 </div>
                 {project.byok && (
-                  <div className="flex items-center space-x-2 text-accent-500">
+                  <div className="flex items-center space-x-2 text-accent-400">
                     <Key size={20} />
-                    <span className="font-mono">BYOK</span>
+                    <span>BYOK</span>
                   </div>
                 )}
               </div>
@@ -66,31 +66,31 @@ export default function ProjectDetail() {
 
             <div className="p-8">
               {/* Comparison Section */}
-              <div className="mb-8 p-6 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-gray-200 dark:border-gray-700/50">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-                  <span className="text-accent-500">{'//'}</span> Cost Comparison
+              <div className="mb-8 rounded-2xl border border-[#342c26] bg-[#181410] p-6">
+                <h2 className="mb-4 text-xl font-semibold text-[#fff7ef]">
+                  Cost comparison
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div className="p-4 bg-gray-50/60 dark:bg-gray-900/60 rounded border border-red-500/30">
+                  <div className="rounded-xl border border-[#4a2e1c] bg-[#221915] p-4">
                     <div className="flex items-center space-x-2 mb-2">
-                      <DollarSign size={18} className="text-red-400" />
-                      <h3 className="font-bold text-gray-900 dark:text-white font-mono">Proprietary Service</h3>
+                      <DollarSign size={18} className="text-[#ff9e63]" />
+                      <h3 className="font-semibold text-[#fff7ef]">Proprietary Service</h3>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 font-mono mb-1">{project.proprietaryService}</p>
-                    <p className="text-red-400 font-mono font-semibold">{project.proprietaryPrice}</p>
-                    <p className="text-gray-500 dark:text-gray-500 text-xs mt-2">Monthly subscription • Vendor lock-in • Data leaves your servers</p>
+                    <p className="mb-1 text-[#e2d7ca]">{project.proprietaryService}</p>
+                    <p className="font-semibold text-[#ffb37e]">{project.proprietaryPrice}</p>
+                    <p className="mt-2 text-xs text-[#8f857a]">Monthly subscription, vendor lock-in, and hosted data flow.</p>
                   </div>
-                  <div className="p-4 bg-gray-50/60 dark:bg-gray-900/60 rounded border border-accent-500/50">
+                  <div className="rounded-xl border border-accent-500/35 bg-accent-500/5 p-4">
                     <div className="flex items-center space-x-2 mb-2">
-                      <span className="text-accent-500 font-mono">{'→'}</span>
-                      <h3 className="font-bold text-gray-900 dark:text-white font-mono">Open Alternative</h3>
+                      <span className="text-accent-500">→</span>
+                      <h3 className="font-semibold text-[#fff7ef]">Open Alternative</h3>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 font-mono mb-1">{project.name}</p>
-                    <p className="text-accent-500 font-mono font-semibold">$0/month</p>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs mt-2">Open-source • Self-hosted • Your data stays private</p>
+                    <p className="mb-1 text-[#e2d7ca]">{project.name}</p>
+                    <p className="font-semibold text-accent-400">$0/month</p>
+                    <p className="mt-2 text-xs text-[#b7aea3]">Open-source, self-hosted, and your infrastructure stays yours.</p>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-500 italic text-center">
+                <p className="text-center text-xs italic text-[#8f857a]">
                   * Price information is provided for informational purposes only and should be verified independently. 
                   Pricing may vary and is subject to change.
                 </p>
@@ -99,19 +99,19 @@ export default function ProjectDetail() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
                   <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-                      <span className="text-accent-500">{'//'}</span> About
+                    <h2 className="mb-4 text-xl font-semibold text-[#fff7ef]">
+                      About
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                    <p className="mb-4 leading-7 text-[#b7aea3]">
                       {project.longDescription}
                     </p>
                     {project.byok && (
-                      <div className="mt-4 p-4 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg border border-accent-500/30">
+                      <div className="mt-4 rounded-xl border border-accent-500/25 bg-accent-500/5 p-4">
                         <div className="flex items-center space-x-2 mb-2">
                           <Key size={18} className="text-accent-500" />
-                          <h3 className="font-bold text-gray-900 dark:text-white font-mono">Bring Your Own Key (BYOK)</h3>
+                          <h3 className="font-semibold text-[#fff7ef]">Bring Your Own Key (BYOK)</h3>
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                        <p className="text-sm leading-6 text-[#b7aea3]">
                           This project requires you to provide your own API keys (OpenAI, Anthropic, etc.). 
                           You pay only for API usage—no monthly subscription fees. Optionally, you can run 
                           local models for zero API costs.
@@ -121,22 +121,22 @@ export default function ProjectDetail() {
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
-                      <span className="text-accent-500">{'//'}</span> Links
+                    <h2 className="mb-4 text-xl font-semibold text-[#fff7ef]">
+                      Links
                     </h2>
                     <div className="flex flex-col space-y-3">
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-3 p-4 frosted-glass-light hover:border-accent-500/50 rounded-lg transition-colors group"
+                        className="group flex items-center space-x-3 rounded-xl border border-[#342d26] bg-[#221d18] p-4 transition-colors hover:border-[#51443a]"
                       >
-                        <div className="p-2 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 group-hover:bg-gray-100/80 dark:group-hover:bg-gray-800/80 rounded border border-gray-200 dark:border-gray-700/50">
-                          <Github size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
+                        <div className="rounded-lg border border-[#3b332c] bg-[#1a1612] p-2">
+                          <Github size={24} className="text-[#b7aea3] group-hover:text-white transition-colors" />
                         </div>
                         <div>
-                          <div className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">github</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-500 font-mono">// source code</div>
+                          <div className="font-semibold text-[#fff7ef] transition-colors group-hover:text-white">GitHub</div>
+                          <div className="text-sm text-[#8f857a]">Source code</div>
                         </div>
                       </a>
                       {project.websiteUrl && (
@@ -144,14 +144,14 @@ export default function ProjectDetail() {
                           href={project.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-3 p-4 frosted-glass-light hover:border-accent-500/50 rounded-lg transition-colors group"
+                          className="group flex items-center space-x-3 rounded-xl border border-[#342d26] bg-[#221d18] p-4 transition-colors hover:border-[#51443a]"
                         >
-                          <div className="p-2 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 group-hover:bg-gray-100/80 dark:group-hover:bg-gray-800/80 rounded border border-gray-200 dark:border-gray-700/50">
-                            <ExternalLink size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
+                          <div className="rounded-lg border border-[#3b332c] bg-[#1a1612] p-2">
+                            <ExternalLink size={24} className="text-[#b7aea3] group-hover:text-white transition-colors" />
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">website</div>
-                            <div className="text-sm text-gray-500 dark:text-gray-500 font-mono">// official site</div>
+                            <div className="font-semibold text-[#fff7ef] transition-colors group-hover:text-white">Website</div>
+                            <div className="text-sm text-[#8f857a]">Official site</div>
                           </div>
                         </a>
                       )}
@@ -160,14 +160,14 @@ export default function ProjectDetail() {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-3 p-4 frosted-glass-light hover:border-accent-500/50 rounded-lg transition-colors group"
+                          className="group flex items-center space-x-3 rounded-xl border border-[#342d26] bg-[#221d18] p-4 transition-colors hover:border-[#51443a]"
                         >
-                          <div className="p-2 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 group-hover:bg-gray-100/80 dark:group-hover:bg-gray-800/80 rounded border border-gray-200 dark:border-gray-700/50">
-                            <ExternalLink size={24} className="text-gray-600 dark:text-gray-400 group-hover:text-accent-500 transition-colors" />
+                          <div className="rounded-lg border border-[#3b332c] bg-[#1a1612] p-2">
+                            <ExternalLink size={24} className="text-[#b7aea3] group-hover:text-white transition-colors" />
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 dark:text-white font-mono group-hover:text-accent-500 transition-colors">demo</div>
-                            <div className="text-sm text-gray-500 dark:text-gray-500 font-mono">// try it out</div>
+                            <div className="font-semibold text-[#fff7ef] transition-colors group-hover:text-white">Demo</div>
+                            <div className="text-sm text-[#8f857a]">Try it out</div>
                           </div>
                         </a>
                       )}
@@ -176,24 +176,24 @@ export default function ProjectDetail() {
                 </div>
 
                 <aside className="lg:col-span-1">
-                  <div className="frosted-glass rounded-lg p-6 space-y-6">
+                  <div className="rounded-2xl border border-[#302922] bg-[#1a1612] p-6 space-y-6">
                     <div>
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 font-mono">
-                        <span className="text-accent-500">{'//'}</span> Replaces
+                      <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8f857a]">
+                        Replaces
                       </h3>
-                      <p className="text-lg font-bold text-gray-900 dark:text-white font-mono">{project.startupName}</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-500 font-mono mt-1">YC {project.ycBatch}</p>
+                      <p className="text-lg font-semibold text-[#fff7ef]">{project.startupName}</p>
+                      <p className="mt-1 text-sm text-[#8f857a]">YC {project.ycBatch}</p>
                     </div>
 
                     <div>
-                      <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-3 font-mono">
-                        <span className="text-accent-500">{'//'}</span> Tags
+                      <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8f857a]">
+                        Tags
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1.5 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-gray-700 dark:text-gray-300 text-sm font-mono rounded border border-gray-200 dark:border-gray-700/50"
+                            className="rounded-full border border-[#3a322b] bg-[#211c17] px-3 py-1.5 text-sm text-[#d8cfc4]"
                           >
                             {tag}
                           </span>
@@ -202,14 +202,14 @@ export default function ProjectDetail() {
                     </div>
 
                     <div>
-                      <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-3 font-mono">
-                        <span className="text-accent-500">{'//'}</span> Tech Stack
+                      <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8f857a]">
+                        Tech Stack
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1.5 backdrop-blur-xl bg-gray-100/60 dark:bg-gray-800/60 text-accent-500 text-sm font-mono rounded border border-accent-500/30"
+                            className="rounded-full border border-accent-500/25 bg-accent-500/8 px-3 py-1.5 text-sm text-accent-400"
                           >
                             {tech}
                           </span>

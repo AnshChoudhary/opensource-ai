@@ -28,19 +28,20 @@ export default function Projects() {
   }, [filteredProjects, sortBy]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header Section */}
+    <div className="min-h-screen">
+      <div className="mx-auto max-w-[1080px] px-6 sm:px-8 lg:px-8 py-12">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2 font-mono">
-            <span className="text-accent-500">{'//'}</span> All Projects
+          <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#8f857a]">
+            Project Directory
+          </p>
+          <h1 className="mt-3 font-display text-3xl text-[#fff7ef] md:text-4xl">
+            Open-source AI startup alternatives
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 font-mono text-sm">
-            Browse open-source alternatives to Y Combinator AI startups
+          <p className="mt-3 max-w-xl text-sm leading-7 text-[#b7aea3]">
+            Search, filter, and compare open-source projects that do the same jobs as popular AI startup products.
           </p>
         </div>
 
-        {/* Search Bar */}
         <div className="mb-8">
           <SearchBar
             value={filters.searchQuery}
@@ -48,21 +49,18 @@ export default function Projects() {
           />
         </div>
 
-        {/* Controls Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div className="flex items-center space-x-4">
             <ViewToggle view={view} onViewChange={setView} />
             <SortDropdown value={sortBy} onChange={setSortBy} />
           </div>
-          <div className="text-gray-600 dark:text-gray-400 font-mono text-sm">
+          <div className="text-sm text-[#b7aea3]">
             {sortedProjects.length} project{sortedProjects.length !== 1 ? 's' : ''} found
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar Filters */}
-          <aside className="lg:col-span-1">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-[230px_minmax(0,1fr)]">
+          <aside>
             <FilterTags
               projects={projects}
               selectedTags={filters.selectedTags}
@@ -75,8 +73,7 @@ export default function Projects() {
             />
           </aside>
 
-          {/* Projects Display */}
-          <div className="lg:col-span-3">
+          <div className="min-w-0">
             {view === 'card' ? (
               <ProjectGrid projects={sortedProjects} />
             ) : (
