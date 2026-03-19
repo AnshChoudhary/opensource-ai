@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 
 interface ProjectGridProps {
   projects: Project[];
+  className?: string;
 }
 
-export default function ProjectGrid({ projects }: ProjectGridProps) {
+export default function ProjectGrid({ projects, className = '' }: ProjectGridProps) {
   if (projects.length === 0) {
     return (
       <motion.div
@@ -30,7 +31,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-3">
+    <div className={`grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-3 ${className}`.trim()}>
       {projects.map((project, index) => (
         <ProjectCard key={project.id} project={project} index={index} />
       ))}

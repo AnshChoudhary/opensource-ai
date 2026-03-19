@@ -101,7 +101,7 @@ export default function Home() {
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </div>
-        <ProjectGrid projects={featuredProjects} />
+        <ProjectGrid projects={featuredProjects} className="lg:grid-cols-3 2xl:grid-cols-3" />
       </section>
     </div>
   );
